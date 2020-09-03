@@ -4,13 +4,18 @@ pipeline {
 	stages {
 		stage ('Hello'){
 			steps {
-				echo 'abc'
+				echo '414'
 			}
 		}
-		stage ('deploy')
+		stage ('deploy'){
 			steps {
 				echo '123'
-			}
+		    }
 		}
+			stage (' 执行shell执行shell脚本  '){
+			steps {
+				echo './xxxxxx.shell'
+		    }
+		}	
 	}
 }
