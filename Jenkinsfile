@@ -1,21 +1,26 @@
 pipeline {
 	agent any
-
 	stages {
-		stage ('Hello'){
-			steps {
-				echo '414'
+		stage('build') {
+		steps {
+		echo "build stage"
+		}
+		post{
+			always {
+				echo "stage post alwasy"
 			}
 		}
-		stage ('deploy'){
-			steps {
-				echo '123'
-		    }
+	}
+}	
+	post {
+		changed {
+			echo "pipeline post changed"
 		}
-			stage (' 执行shell执行shell脚本  '){
-			steps {
-				echo './xxxxxx.shell'
-		    }
-		}	
+		always {
+			echo "pipeline post alwasy"
+		}
+		success {
+			echo "pipeline post success"
+		}
 	}
 }
