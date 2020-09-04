@@ -22,5 +22,8 @@ pipeline {
 		success {
 			echo "pipeline post success"
 		}
+	options {
+		buildDiscarder(logRotator(numTokeeStr: '5'))
+		}	
 	}
 }
